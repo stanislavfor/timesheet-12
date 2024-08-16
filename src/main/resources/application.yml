@@ -1,0 +1,41 @@
+# spring.application.name=timesheet
+# spring.datasource.url=jdbc:h2:mem:test
+# spring.datasource.username=sa
+# spring.datasource.password=
+# spring.main.allow-bean-definition-overriding=true
+
+#application.logging.level=DEBUG
+#application.logging.printArgs=true
+#application.logging.enabled=true
+
+
+spring:
+  application:
+    name: timesheet
+  logging:
+    enabled: true
+    print-args: true
+    level: DEBUG
+  datasource:
+    # url: jdbc:postgresql://localhost:5432/timesheets_db
+    url: jdbc:h2:mem:test
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+    hikari:
+      pool-name: HikariPool-1
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+  main:
+    allow-bean-definition-overriding: true
+server:
+  port: 8080
+
+
+
